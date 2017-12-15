@@ -2,7 +2,7 @@ version: '3'
 
 services:
   bitbucket:
-    image: nicoherbigio/atlassian-bitbucket-server:5.6
+    image: nicoherbigio/atlassian-bitbucket-server:latest
     restart: always
     depends_on:
       - bitbucket-database
