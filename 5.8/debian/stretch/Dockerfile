@@ -56,7 +56,7 @@ RUN groupadd -r -g ${RUN_GROUP_ID} ${RUN_GROUP} && useradd -r -g ${RUN_GROUP} -u
 ARG BITBUCKET_VERSION=5.8.2
 ARG BITBUCKET_DOWNLOAD_URL=https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${BITBUCKET_VERSION}.tar.gz
 
-ARG MYSQL_CONNECTOR_VERSION=5.1.45
+ARG MYSQL_CONNECTOR_VERSION=5.1.46
 ARG MYSQL_CONNECTOR_DOWNLOAD_URL=https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz
 
 ENV BITBUCKET_INSTALL_DIR=/opt/atlassian/bitbucket
