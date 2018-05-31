@@ -56,9 +56,6 @@ RUN groupadd -r -g ${RUN_GROUP_ID} ${RUN_GROUP} && useradd -r -g ${RUN_GROUP} -u
 ARG BITBUCKET_VERSION=5.11.1
 ARG BITBUCKET_DOWNLOAD_URL=https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${BITBUCKET_VERSION}.tar.gz
 
-ARG MYSQL_CONNECTOR_VERSION=5.1.46
-ARG MYSQL_CONNECTOR_DOWNLOAD_URL=https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz
-
 ENV BITBUCKET_INSTALL_DIR=/opt/atlassian/bitbucket
 ENV BITBUCKET_HOME=/var/atlassian/bitbucket
 
@@ -66,21 +63,17 @@ ENV BITBUCKET_HOME=/var/atlassian/bitbucket
 #   - Create installation directory
 #   - Create home directory
 #   - Download and unpack Atlassian Bitbucket Server
-#   - Create lib directory inside the home directory
-#   - Download and unpack MySQL Connector
 #   - Set permissions for the Bitbucket installation directory
 #   - Set permissions for the Bitbucket home directory
 RUN set -ex \
     && mkdir -p ${BITBUCKET_INSTALL_DIR} \
     && mkdir -p ${BITBUCKET_HOME} \
     && curl -fSL ${BITBUCKET_DOWNLOAD_URL} | tar -xz --no-same-owner --strip-components=1 -C ${BITBUCKET_INSTALL_DIR} \
-    && mkdir -p ${BITBUCKET_HOME}/lib \
-    && curl -fSL ${MYSQL_CONNECTOR_DOWNLOAD_URL} | tar -xz --no-same-owner --strip-components=1 -C ${BITBUCKET_HOME}/lib "mysql-connector-java-${MYSQL_CONNECTOR_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}-bin.jar" \
     && chown -R ${RUN_USER}:${RUN_GROUP} ${BITBUCKET_INSTALL_DIR} \
     && chown -R ${RUN_USER}:${RUN_GROUP} ${BITBUCKET_HOME}
 
 
-# Configure Atlassian Confluence Server
+# Configure Atlassian Bitbucket Server
 
 VOLUME ${BITBUCKET_HOME}
 
