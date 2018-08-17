@@ -53,7 +53,7 @@ RUN groupadd -r -g ${RUN_GROUP_ID} ${RUN_GROUP} && useradd -r -g ${RUN_GROUP} -u
 
 # Install Atlassian Bitbucket Server inclusive MySQL Connector
 
-ARG BITBUCKET_VERSION=5.6.4
+ARG BITBUCKET_VERSION=5.6.5
 ARG BITBUCKET_DOWNLOAD_URL=https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${BITBUCKET_VERSION}.tar.gz
 
 ARG MYSQL_CONNECTOR_VERSION=5.1.46
