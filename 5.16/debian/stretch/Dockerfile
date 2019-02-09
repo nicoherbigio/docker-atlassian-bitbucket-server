@@ -32,8 +32,8 @@ RUN groupadd -r -g ${RUN_GROUP_ID} ${RUN_GROUP} && useradd -r -g ${RUN_GROUP} -u
 
 # Install Atlassian Bitbucket Server
 
-ARG BITBUCKET_VERSION=5.16.0
-ARG BITBUCKET_DOWNLOAD_URL=https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${BITBUCKET_VERSION}.tar.gz
+ARG BITBUCKET_VERSION=5.16.1
+ARG BITBUCKET_DOWNLOAD_URL=https://product-downloads.atlassian.com/software/stash/downloads/atlassian-bitbucket-${BITBUCKET_VERSION}.tar.gz
 
 ENV BITBUCKET_INSTALL_DIR=/opt/atlassian/bitbucket
 ENV BITBUCKET_HOME=/var/atlassian/bitbucket
