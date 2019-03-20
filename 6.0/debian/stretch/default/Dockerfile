@@ -1,4 +1,4 @@
-FROM nicoherbigio/adoptopenjdk-openjdk:11.0.1u13
+FROM nicoherbigio/adoptopenjdk-openjdk:8u202
 
 LABEL maintainer="Nico Herbig <nico@nicoherbig.io>"
 

@@ -6,7 +6,7 @@ set -euo pipefail
 
 if [ -d "/secrets" ]; then
     KEYTOOL="${JAVA_HOME}/bin/keytool"
-    KEYSTORE="${JAVA_HOME}/lib/security/cacerts"
+    KEYSTORE="${JAVA_HOME}/jre/lib/security/cacerts"
 
     for CERT_FILE in "/secrets/*.crt"; do
         echo "Importing certificate file ${CERT_FILE} into Java Keystore ${KEYSTORE}"
