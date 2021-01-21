@@ -11,7 +11,9 @@ env:
   DOCKER_IMAGE_CONTEXT_PATH: 6.0/debian/default/
   DOCKERHUB_IMAGE_TAGS: |
     nicoherbigde/atlassian-bitbucket-server:6.0
+    nicoherbigio/atlassian-bitbucket-server:6.0
     nicoherbigde/atlassian-bitbucket-server:6.0.4
+    nicoherbigio/atlassian-bitbucket-server:6.0.4
 
 jobs:
   build-and-push:
