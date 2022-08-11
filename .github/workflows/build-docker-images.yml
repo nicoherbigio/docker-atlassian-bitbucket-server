@@ -1,0 +1,53 @@
+name: Docker image CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/**'
+      - '7.21/**'
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  build-docker-images:
+    runs-on: [ubuntu-20.04]
+
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [7.21]
+        include:
+          - version: 7.21
+            docker-context: 7.21/ubuntu/default
+            docker-tags: |
+              nicoherbigde/atlassian-bitbucket-server:7.21
+              nicoherbigio/atlassian-bitbucket-server:7.21
+              nicoherbigde/atlassian-bitbucket-server:7.21.3
+              nicoherbigio/atlassian-bitbucket-server:7.21.3
+
+    steps:
+      - name: Checkout Git Repository
+        uses: actions/checkout@v2
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build Docker image and Push it to Docker Hub
+        uses: docker/build-push-action@v2
+        with:
+          context: ${{ matrix.docker-context }}
+          no-cache: true
+          push: true
+          tags: ${{ matrix.docker-tags }}
