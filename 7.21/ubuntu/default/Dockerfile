@@ -1,4 +1,4 @@
-FROM atlassian/bitbucket:7.21.4
+FROM atlassian/bitbucket:7.21.5
 
 LABEL maintainer="Nico Herbig <nico@nicoherbig.io>"
 
