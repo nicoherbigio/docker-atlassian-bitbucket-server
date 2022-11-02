@@ -18,13 +18,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [7.21]
+        version: [7.21-jammy]
         include:
-          - version: 7.21
+          - version: 7.21-jammy
             docker-context: 7.21/ubuntu/default
             docker-tags: |
               nicoherbigde/atlassian-bitbucket-server:7.21
+              nicoherbigde/atlassian-bitbucket-server:7.21-jammy
               nicoherbigde/atlassian-bitbucket-server:7.21.6
+              nicoherbigde/atlassian-bitbucket-server:7.21.6-jammy
 
     steps:
       - name: Checkout Git Repository
