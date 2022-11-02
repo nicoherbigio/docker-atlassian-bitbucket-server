@@ -4,7 +4,7 @@
 
 ## Supported tags and respective `Dockerfile` links
 
- * [`7.21`, `7.21.6` (7.21/ubuntu/default/Dockerfile)](https://github.com/nicoherbigio/docker-atlassian-bitbucket-server/blob/main/7.21/ubuntu/default/Dockerfile)
+ * [`7.21`, `7.21.6`](https://github.com/nicoherbigio/docker-atlassian-bitbucket-server/blob/main/7.21/ubuntu/default/Dockerfile)
 
 ## How to get this image
 
