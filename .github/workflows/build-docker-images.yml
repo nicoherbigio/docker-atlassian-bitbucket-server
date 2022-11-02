@@ -24,9 +24,7 @@ jobs:
             docker-context: 7.21/ubuntu/default
             docker-tags: |
               nicoherbigde/atlassian-bitbucket-server:7.21
-              nicoherbigio/atlassian-bitbucket-server:7.21
               nicoherbigde/atlassian-bitbucket-server:7.21.6
-              nicoherbigio/atlassian-bitbucket-server:7.21.6
 
     steps:
       - name: Checkout Git Repository
